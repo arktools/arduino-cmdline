@@ -35,7 +35,7 @@
                 <attribute name="Main-Class" value="processing.app.Commander"/>
                 <attribute name="Class-Path" value="."/>
             </manifest>
-            <fileset dir="build/classes"/>
+            <fileset dir="${build}"/>
             <zipfileset excludes="META-INF/*.SF" src="lib/core.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="lib/ecj.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="lib/jna.jar"/>
@@ -44,9 +44,7 @@
         </jar>
     </target>
     
-    <target name="clean"
-        description="clean up" >
-        <!-- Delete the ${build} and ${dist} directory trees -->
+    <target name="clean" description="clean up" >
         <delete dir="${build}"/>
         <delete dir="${dist}"/>
         <delete dir="${reports}"/>
